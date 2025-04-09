@@ -122,7 +122,7 @@ resource "aws_connect_queue" "Virgin-Active-Agent-Queue" {
   instance_id           = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
   name                  = "Virgin-Active-Agent-Queue"
   description           = "Queue used by Virgin Active Agents"
-  hours_of_operation_id = aws_connect_hours_of_operation.Virgin-Active-Hours_of_Operation.id
+  hours_of_operation_id = "aws_connect_hours_of_operation.Virgin-Active-Hours_of_Operation.id"
 
   tags = {
     "Name" = "Queue for Virgin Active Agents",
