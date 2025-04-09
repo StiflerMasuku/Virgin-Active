@@ -150,3 +150,37 @@ resource "aws_connect_routing_profile" "Virgin-Active-Agent-Routing-Profile" {
     "Name" = "Virgin-Active-Agent-Routing-Profile",
   }
 }
+
+resource "aws_connect_security_profile" "Virgin-Active-Agent-Security-Profile" {
+  instance_id = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
+  name        = "Virgin-Active-Agent-Security-Profile"
+  description = "Virgin Active Agents Security Profile"
+
+  permissions = [
+    "BasicAgentAccess",
+    "OutboundCallAccess",
+    "VoiceId.Access",
+    "SelfAssignContacts.Access",
+    "ContactSearch.View",
+    "MyContacts.View",
+    "PhoneNumbers.Claim",
+    "PhoneNumbers.Edit",
+    "PhoneNumbers.Release",
+    "PhoneNumbers.View",
+    "SecurityProfiles.Create",
+    "SecurityProfiles.Delete",
+    "SecurityProfiles.Edit",
+    "SecurityProfiles.View",
+    "AgentStates.Create",
+    "AgentStates.Edit",
+    "AgentStates.EnableAndDisable",
+    "AgentStates.View",
+    "RealtimeContactLens.View",
+    "AudioDeviceSettings.Access",
+    "VideoContact.Access"
+  ]
+
+  tags = {
+    "Name" = "Virgin Active Agents Security Profile"
+  }
+}
