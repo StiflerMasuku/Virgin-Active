@@ -277,7 +277,7 @@ resource "aws_connect_contact_flow" "Virgin-Active-Main-Contact-Flow" {
   description  = "Virgin Active Main Contact Flow"
   type         = "CONTACT_FLOW"
   filename     = "Virgin-Active-Main-Line-Flow.json"
-  content_hash = filebase64sha256("contact_flow.json")
+  content_hash = filebase64sha256("Virgin-Active-Main-Line-Flow.json")
   tags = {
     "Name"        = "Virgin Active Main Contact Flow",
     "Application" = "Terraform",
