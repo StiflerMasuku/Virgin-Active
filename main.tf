@@ -184,3 +184,90 @@ resource "aws_connect_security_profile" "Virgin-Active-Agent-Security-Profile" {
     "Name" = "Virgin Active Agents Security Profile"
   }
 }
+
+resource "aws_connect_user" "AgentI" {
+  instance_id        = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
+  name               = "Agent I"
+  password           = "Stifler451!"
+  routing_profile_id = aws_connect_routing_profile.Virgin-Active-Agent-Routing-Profile.routing_profile_id
+
+  security_profile_ids = [
+    aws_connect_security_profile.Virgin-Active-Agent-Security-Profile.security_profile_id
+  ]
+
+  identity_info {
+    first_name = "Wasfee"
+    last_name  = "Samsodien"
+  }
+
+  phone_config {
+    after_contact_work_time_limit = 0
+    phone_type                    = "SOFT_PHONE"
+  }
+}
+
+
+resource "aws_connect_user" "AgentII" {
+  instance_id        = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
+  name               = "Agent II"
+  password           = "Stifler451!"
+  routing_profile_id = aws_connect_routing_profile.Virgin-Active-Agent-Routing-Profile.routing_profile_id
+
+  security_profile_ids = [
+    aws_connect_security_profile.Virgin-Active-Agent-Security-Profile.security_profile_id
+  ]
+
+  identity_info {
+    first_name = " Lukhanyiso"
+    last_name  = "Sifumba"
+  }
+
+  phone_config {
+    after_contact_work_time_limit = 0
+    phone_type                    = "SOFT_PHONE"
+  }
+}
+
+
+resource "aws_connect_user" "AgentIII" {
+  instance_id        = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
+  name               = "Agent III"
+  password           = "Stifler451!"
+  routing_profile_id = aws_connect_routing_profile.Virgin-Active-Agent-Routing-Profile.routing_profile_id
+
+  security_profile_ids = [
+    aws_connect_security_profile.Virgin-Active-Agent-Security-Profile.security_profile_id
+  ]
+
+  identity_info {
+    first_name = "Ulrika"
+    last_name  = "Fouche"
+  }
+
+  phone_config {
+    after_contact_work_time_limit = 0
+    phone_type                    = "SOFT_PHONE"
+  }
+}
+
+
+resource "aws_connect_user" "AgentIV" {
+  instance_id        = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
+  name               = "Agent IV"
+  password           = "Stifler451!"
+  routing_profile_id = aws_connect_routing_profile.Virgin-Active-Agent-Routing-Profile.routing_profile_id
+
+  security_profile_ids = [
+    aws_connect_security_profile.Virgin-Active-Agent-Security-Profile.security_profile_id
+  ]
+
+  identity_info {
+    first_name = "Nomasiphiwe"
+    last_name  = "Tshali"
+  }
+
+  phone_config {
+    after_contact_work_time_limit = 0
+    phone_type                    = "SOFT_PHONE"
+  }
+}
