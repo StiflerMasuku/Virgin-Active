@@ -127,3 +127,26 @@ resource "aws_connect_queue" "Virgin-Active-Agent-Queue" {
     "Name" = "Queue for Virgin Active Agents",
   }
 }
+
+resource "aws_connect_routing_profile" "Virgin-Active-Agent-Routing-Profile" {
+  instance_id               = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
+  name                      = "Virgin-Active-Agent-Routing-Profile"
+  default_outbound_queue_id = aws_connect_queue.Virgin-Active-Agent-Queue.queue_id
+  description               = "Virgin Active Routing Profile for Agents"
+
+  media_concurrencies {
+    channel     = "VOICE"
+    concurrency = 1
+  }
+
+  queue_configs {
+    channel  = "VOICE"
+    delay    = 2
+    priority = 1
+    queue_id = aws_connect_queue.Virgin-Active-Agent-Queue.queue_id
+  }
+
+  tags = {
+    "Name" = "Virgin-Active-Agent-Routing-Profile",
+  }
+}
