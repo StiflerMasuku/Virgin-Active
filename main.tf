@@ -187,7 +187,7 @@ resource "aws_connect_security_profile" "Virgin-Active-Agent-Security-Profile" {
 
 resource "aws_connect_user" "AgentI" {
   instance_id        = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
-  name               = "Agent I"
+  name               = "AgentI"
   password           = "Stifler451!"
   routing_profile_id = aws_connect_routing_profile.Virgin-Active-Agent-Routing-Profile.routing_profile_id
 
@@ -209,7 +209,7 @@ resource "aws_connect_user" "AgentI" {
 
 resource "aws_connect_user" "AgentII" {
   instance_id        = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
-  name               = "Agent II"
+  name               = "AgentII"
   password           = "Stifler451!"
   routing_profile_id = aws_connect_routing_profile.Virgin-Active-Agent-Routing-Profile.routing_profile_id
 
@@ -231,7 +231,7 @@ resource "aws_connect_user" "AgentII" {
 
 resource "aws_connect_user" "AgentIII" {
   instance_id        = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
-  name               = "Agent III"
+  name               = "AgentIII"
   password           = "Stifler451!"
   routing_profile_id = aws_connect_routing_profile.Virgin-Active-Agent-Routing-Profile.routing_profile_id
 
@@ -253,7 +253,7 @@ resource "aws_connect_user" "AgentIII" {
 
 resource "aws_connect_user" "AgentIV" {
   instance_id        = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
-  name               = "Agent IV"
+  name               = "AgentIV"
   password           = "Stifler451!"
   routing_profile_id = aws_connect_routing_profile.Virgin-Active-Agent-Routing-Profile.routing_profile_id
 
