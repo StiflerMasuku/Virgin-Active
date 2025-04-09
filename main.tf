@@ -1,7 +1,16 @@
-provider "aws"{
-    region = "af-south-1"
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
 }
 
+# Configure the AWS Provider
+provider "aws" {
+  region = "af-south-1"
+}
 
 resource "aws_connect_hours_of_operation" "Virgin-Active-Hours_of_Operation" {
   instance_id = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
