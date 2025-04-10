@@ -325,7 +325,7 @@ resource "aws_lambda_function" "DynamoContactCenterClosure" {
 
   source_code_hash = data.archive_file.lambda.output_base64sha256
 
-  runtime = "Python 3.13"
+  runtime = "python3.13"
 }
 
 
