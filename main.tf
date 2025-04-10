@@ -348,8 +348,18 @@ data "aws_iam_policy_document" "lambda_logging" {
     actions = [
       "dynamodb:*",
 
+
     ]
     resources = [aws_dynamodb_table.DynamoContactCenter.arn]
+  }
+
+  statement {
+    effect = "Allow"
+    actions = [
+      "sns:*"      
+
+    ]
+    resources = ["*"]
   }
 }
 
@@ -383,6 +393,7 @@ resource "aws_connect_contact_flow" "Virgin-Active-Main-Contact-Flow" {
   name         = "Virgin-Active-Main-Contact-Flow"
   description  = "Virgin Active Main Contact Flow"
   type         = "CONTACT_FLOW"
+  filename     = "Virgin-Active-Main-Line-Flow.json"
   content = templatefile("./Virgin-Active-Main-Line-Flow.json", {
     queue_arn = aws_connect_queue.Virgin-Active-Agent-Queue.arn
     hours_arn = aws_connect_hours_of_operation.Virgin-Active-Hours_of_Operation.arn
@@ -390,10 +401,75 @@ resource "aws_connect_contact_flow" "Virgin-Active-Main-Contact-Flow" {
     Welcome_Prompt_arn = data.aws_connect_prompt.Welcome_Prompt.arn
     Emergency_Prompt_arn = data.aws_connect_prompt.Emergency_Prompt.arn
     lambda_arn = aws_lambda_function.DynamoContactCenterClosure.arn
-
+  
   })
   tags = {
     "Name"        = "Virgin Active Main Contact Flow",
+    "Application" = "Terraform",
+    "Method"      = "Create"
+  }
+}
+
+data "archive_file" "lambda2" {
+  type        = "zip"
+  source_file = "lambda_function2.py"
+  output_path = "DynamoContactCenterSNS.zip"
+}
+
+
+resource "aws_lambda_function" "DynamoContactCenterSNS" {
+  # If the file is not in the current working directory you will need to include a
+  # path.module in the filename.
+  filename      = "DynamoContactCenterSNS.zip"
+  function_name = "DynamoContactCenterSNS"
+  role          = aws_iam_role.iam_for_lambda.arn
+  handler       = "lambda_function2.lambda_handler"
+
+  source_code_hash = data.archive_file.lambda2.output_base64sha256
+
+  runtime = "python3.13"
+}
+
+
+
+
+data "archive_file" "lambda3" {
+  type        = "zip"
+  source_file = "lambda_function3.py"
+  output_path = "DynamoContactCenterChangeState.zip"
+}
+
+
+resource "aws_lambda_function" "DynamoContactCenterChangeState" {
+  # If the file is not in the current working directory you will need to include a
+  # path.module in the filename.
+  filename      = "DynamoContactCenterChangeState.zip"
+  function_name = "DynamoContactCenterChangeState"
+  role          = aws_iam_role.iam_for_lambda.arn
+  handler       = "lambda_function3.lambda_handler"
+
+  source_code_hash = data.archive_file.lambda3.output_base64sha256
+
+  runtime = "python3.13"
+}
+
+
+
+
+resource "aws_connect_contact_flow" "Virgin-Active-Main-Contact-Flow" {
+  instance_id  = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
+  name         = "Virgin-Active-Contact-Centre-Closure-Flow"
+  description  = "Virgin Active Contact Centre Closure Contact Flow"
+  type         = "CONTACT_FLOW"
+  content = templatefile("./Virgin-Active-Contact-Centre-Closure.json", {
+    lambda_arn = aws_lambda_function.DynamoContactCenterClosure.arn
+    lambda3_arn = aws_lambda_function.DynamoContactCenterChangeState.arn
+    lambda2_arn = aws_lambda_function.DynamoContactCenterSNS.arn
+  
+  })
+
+  tags = {
+    "Name"        = "Virgin Active Contact Center Closure Contact Flow",
     "Application" = "Terraform",
     "Method"      = "Create"
   }
