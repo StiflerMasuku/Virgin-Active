@@ -174,7 +174,7 @@
           }
         },
         "Hours": {
-          "id": "arn:aws:connect:af-south-1:954976325259:instance/8889f33c-4518-44ed-91cf-b879097a6dba/operating-hours/4aee01aa-4086-48c2-ad41-7e70caa0fa50",
+          "id": "${hours_arn}",
           "text": "Basic Hours"
         }
       },
@@ -238,7 +238,7 @@
     },
     {
       "Parameters": {
-        "LambdaFunctionARN": "arn:aws:lambda:af-south-1:954976325259:function:DynamoContactCenterClosure",
+        "LambdaFunctionARN": "${lambda_arn}",
         "InvocationTimeLimitSeconds": "3",
         "LambdaInvocationAttributes": {
           "PhoneNumber": "$.Attributes.phone_number"
@@ -337,7 +337,7 @@
     },
     {
       "Parameters": {
-        "PromptId": "arn:aws:connect:af-south-1:954976325259:instance/8889f33c-4518-44ed-91cf-b879097a6dba/prompt/be3f4585-c33c-4c8d-9bb6-06d6be0b87fc"
+        "PromptId": "${Emergency_Prompt_arn}"
       },
       "Identifier": "c1a364df-f935-4a12-b445-2b9462042952",
       "Type": "MessageParticipant",
@@ -359,7 +359,7 @@
     },
     {
       "Parameters": {
-        "QueueId": "arn:aws:connect:af-south-1:954976325259:instance/8889f33c-4518-44ed-91cf-b879097a6dba/queue/a9325e74-ba36-4bdd-8110-50bc0ec58f43"
+        "QueueId": "${queue_arn}"
       },
       "Identifier": "01e49e8f-92d1-4ad1-879f-5ba0165cd52a",
       "Type": "UpdateContactTargetQueue",
@@ -375,7 +375,7 @@
     },
     {
       "Parameters": {
-        "PromptId": "arn:aws:connect:af-south-1:954976325259:instance/8889f33c-4518-44ed-91cf-b879097a6dba/prompt/203a8836-f274-4bd0-a211-06a70ff100b4"
+        "PromptId": "${Welcome_Prompt_arn}"
       },
       "Identifier": "99d9da7d-079b-4c59-b53d-82115dd591c3",
       "Type": "MessageParticipant",
@@ -423,7 +423,7 @@
     },
     {
       "Parameters": {
-        "HoursOfOperationId": "arn:aws:connect:af-south-1:954976325259:instance/8889f33c-4518-44ed-91cf-b879097a6dba/operating-hours/4aee01aa-4086-48c2-ad41-7e70caa0fa50"
+        "HoursOfOperationId": "${hours_arn}"
       },
       "Identifier": "e2d89c66-3ccd-4b15-b8e6-8cb79491bafe",
       "Type": "CheckHoursOfOperation",
@@ -461,7 +461,7 @@
       "Parameters": {
         "StoreInput": "False",
         "InputTimeLimitSeconds": "30",
-        "PromptId": "arn:aws:connect:af-south-1:954976325259:instance/8889f33c-4518-44ed-91cf-b879097a6dba/prompt/90d5cdfa-ac5f-4681-9b1e-7f1f9db71f17"
+        "PromptId": "${After_Hours_arn}"
       },
       "Identifier": "f35344ae-f489-4996-9832-fcfc182ec9d3",
       "Type": "GetParticipantInput",
