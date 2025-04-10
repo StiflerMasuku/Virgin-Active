@@ -1,0 +1,994 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "7cb4824c-6410-4691-831b-c471fc868dce",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": -228,
+      "y": 54.4
+    },
+    "ActionMetadata": {
+      "a27fd4a5-f177-41b6-8555-f040782fca1f": {
+        "position": {
+          "x": 2187.2,
+          "y": 7.2
+        },
+        "parameters": {
+          "Attributes": {
+            "CustomerOTP": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "CustomerOTP"
+        ]
+      },
+      "3cb1e496-9b25-4971-86db-311cb7e5234d": {
+        "position": {
+          "x": 3368.8,
+          "y": 644.8
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "3ebe50a5-f02f-4757-a4ba-41b8b0e98148",
+            "operator": {
+              "name": "Contains",
+              "value": "Contains",
+              "shortDisplay": "contains"
+            },
+            "value": "Open"
+          }
+        ]
+      },
+      "a2da9791-5a49-4d1b-85e4-745883a7bd9c": {
+        "position": {
+          "x": 3720.8,
+          "y": 668.8
+        }
+      },
+      "9baf67c3-5130-4603-be09-c0620dc843f4": {
+        "position": {
+          "x": 2335.2,
+          "y": 595.2
+        },
+        "parameters": {
+          "Attributes": {
+            "CustomerOTP": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "CustomerOTP"
+        ]
+      },
+      "9b18d164-e9b3-4a02-bb14-c572b1e5f552": {
+        "position": {
+          "x": 384.8,
+          "y": 288.8
+        },
+        "parameters": {
+          "Attributes": {
+            "state": {
+              "useDynamic": true
+            },
+            "otp": {
+              "useDynamic": true
+            },
+            "PhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "state",
+          "otp",
+          "PhoneNumber"
+        ]
+      },
+      "7cb4824c-6410-4691-831b-c471fc868dce": {
+        "position": {
+          "x": -61.6,
+          "y": 117.6
+        }
+      },
+      "b52d2592-a6ad-4438-9259-cc1bc9651a74": {
+        "position": {
+          "x": 398.4,
+          "y": 8.8
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "DynamoContactCenterClosure"
+          },
+          "LambdaInvocationAttributes": {
+            "PhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicMetadata": {
+          "PhoneNumber": true
+        }
+      },
+      "43eb4847-5019-48e3-87a7-55ddb2789aed": {
+        "position": {
+          "x": 1902.4,
+          "y": 52
+        },
+        "conditionMetadata": [],
+        "countryCodePrefix": "+1"
+      },
+      "70328375-79c6-4886-992b-15fd64b4779e": {
+        "position": {
+          "x": 1407.2,
+          "y": -42.4
+        }
+      },
+      "send otp": {
+        "position": {
+          "x": 1658.4,
+          "y": 145.6
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "DynamoContactCenterSNS"
+          },
+          "LambdaInvocationAttributes": {
+            "otp": {
+              "useDynamic": true
+            },
+            "PhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicMetadata": {
+          "otp": true,
+          "PhoneNumber": true
+        }
+      },
+      "0065286b-5ffc-4281-bf90-b2e26d90085e": {
+        "position": {
+          "x": 2990.4,
+          "y": 170.4
+        },
+        "parameters": {
+          "Attributes": {
+            "body": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "body"
+        ]
+      },
+      "97ded0ac-2457-4ea6-a087-c7a382b496ee": {
+        "position": {
+          "x": 2460,
+          "y": 139.2
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "96208c82-42aa-4364-a93f-405bc0393780",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "$.Attributes.otp"
+          }
+        ]
+      },
+      "Change state": {
+        "position": {
+          "x": 2735.2,
+          "y": 71.2
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "DynamoContactCenterChangeState"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "3192a1dd-47d5-4dba-a189-ecd1c3b49465": {
+        "position": {
+          "x": 2050.4,
+          "y": 640
+        },
+        "conditionMetadata": [],
+        "countryCodePrefix": "+1"
+      },
+      "7256c062-a532-46c9-9aa4-2a4cb020bcd7": {
+        "position": {
+          "x": 1555.2,
+          "y": 545.6
+        }
+      },
+      "send otp-copy-1": {
+        "position": {
+          "x": 1806.4,
+          "y": 733.6
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "DynamoContactCenterSNS"
+          },
+          "LambdaInvocationAttributes": {
+            "otp": {
+              "useDynamic": true
+            },
+            "PhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicMetadata": {
+          "otp": true,
+          "PhoneNumber": true
+        }
+      },
+      "ef9e1e69-fc73-463f-9766-1c9e7ce89ded": {
+        "position": {
+          "x": 3138.4,
+          "y": 758.4
+        },
+        "parameters": {
+          "Attributes": {
+            "body": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "body"
+        ]
+      },
+      "dbae1e7b-2cf4-4041-864a-4f67e61b999f": {
+        "position": {
+          "x": 2606.4,
+          "y": 725.6
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "a4ccb5be-a4a9-4dfc-84b7-6b719cb7f8e4",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "$.Attributes.otp"
+          }
+        ]
+      },
+      "Change state-copy-1": {
+        "position": {
+          "x": 2883.2,
+          "y": 659.2
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "DynamoContactCenterChangeState"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "32e7e220-66dd-4e74-a028-a247f9bc6d0a": {
+        "position": {
+          "x": 3220.8,
+          "y": 56.8
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "0b0c645c-b57d-4878-a5ff-156b0c2edb14",
+            "operator": {
+              "name": "Contains",
+              "value": "Contains",
+              "shortDisplay": "contains"
+            },
+            "value": "Closed"
+          }
+        ]
+      },
+      "4fd7c999-5d5e-4c2b-b6bf-24ba31cfccf1": {
+        "position": {
+          "x": 4181.6,
+          "y": 255.2
+        }
+      },
+      "4bc8f7ed-011c-4312-9390-aff209d22265": {
+        "position": {
+          "x": 3572.8,
+          "y": 80.8
+        }
+      },
+      "9c3aa70b-ad45-4576-956d-a709829a1d85": {
+        "position": {
+          "x": 1868.8,
+          "y": 380.8
+        }
+      },
+      "1405c8a0-2239-4333-8ba6-7acd3d322483": {
+        "position": {
+          "x": 1097.6,
+          "y": -107.2
+        },
+        "conditionMetadata": [
+          {
+            "id": "b40d49a7-8b2b-4ab9-b48a-062b619cb7bc",
+            "value": "1"
+          },
+          {
+            "id": "5356626d-bdee-4f6e-847e-c4988968f3f3",
+            "value": "2"
+          }
+        ]
+      },
+      "d27bfd02-9c0c-40d0-b354-9c73a5af8356": {
+        "position": {
+          "x": 693.6,
+          "y": 179.2
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "d29480a9-9841-433f-9d3a-4ce431268a3a",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "Closed"
+          },
+          {
+            "id": "3357809a-e88c-443b-9b20-60f45190440f",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "Open"
+          }
+        ]
+      },
+      "d9348e3b-0d3a-47b0-8e70-6fe8b32f8922": {
+        "position": {
+          "x": 1094.4,
+          "y": 537.6
+        },
+        "conditionMetadata": [
+          {
+            "id": "e9432f25-b5b6-44d5-a573-27cd9f7202fa",
+            "value": "1"
+          },
+          {
+            "id": "6da016a9-d579-4b2b-88b4-1fadd1318c61",
+            "value": "2"
+          }
+        ]
+      },
+      "e0f51e06-bf60-4863-87e7-433f43922a70": {
+        "position": {
+          "x": 1319.2,
+          "y": 308.8
+        }
+      }
+    },
+    "Annotations": [],
+    "name": "Virgin-Active-Contact-Centre-Closure",
+    "description": "",
+    "type": "contactFlow",
+    "status": "PUBLISHED",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "Attributes": {
+          "CustomerOTP": "$.StoredCustomerInput"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "a27fd4a5-f177-41b6-8555-f040782fca1f",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "97ded0ac-2457-4ea6-a087-c7a382b496ee",
+        "Errors": [
+          {
+            "NextAction": "97ded0ac-2457-4ea6-a087-c7a382b496ee",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.body"
+      },
+      "Identifier": "3cb1e496-9b25-4971-86db-311cb7e5234d",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "a2da9791-5a49-4d1b-85e4-745883a7bd9c",
+        "Conditions": [
+          {
+            "NextAction": "a2da9791-5a49-4d1b-85e4-745883a7bd9c",
+            "Condition": {
+              "Operator": "TextContains",
+              "Operands": [
+                "Open"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "a2da9791-5a49-4d1b-85e4-745883a7bd9c",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Contact center is Opened"
+      },
+      "Identifier": "a2da9791-5a49-4d1b-85e4-745883a7bd9c",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "4fd7c999-5d5e-4c2b-b6bf-24ba31cfccf1",
+        "Errors": [
+          {
+            "NextAction": "4fd7c999-5d5e-4c2b-b6bf-24ba31cfccf1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "CustomerOTP": "$.StoredCustomerInput"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "9baf67c3-5130-4603-be09-c0620dc843f4",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "dbae1e7b-2cf4-4041-864a-4f67e61b999f",
+        "Errors": [
+          {
+            "NextAction": "dbae1e7b-2cf4-4041-864a-4f67e61b999f",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "state": "$.External.state",
+          "otp": "$.External.otp",
+          "PhoneNumber": "$.External.PhoneNumber"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "9b18d164-e9b3-4a02-bb14-c572b1e5f552",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "d27bfd02-9c0c-40d0-b354-9c73a5af8356",
+        "Errors": [
+          {
+            "NextAction": "d27bfd02-9c0c-40d0-b354-9c73a5af8356",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "7cb4824c-6410-4691-831b-c471fc868dce",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "b52d2592-a6ad-4438-9259-cc1bc9651a74"
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "${lambda_arn}",
+        "InvocationTimeLimitSeconds": "3",
+        "LambdaInvocationAttributes": {
+          "PhoneNumber": "$.Attributes.phone_number"
+        },
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "b52d2592-a6ad-4438-9259-cc1bc9651a74",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "9b18d164-e9b3-4a02-bb14-c572b1e5f552",
+        "Errors": [
+          {
+            "NextAction": "9b18d164-e9b3-4a02-bb14-c572b1e5f552",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "StoreInput": "True",
+        "InputTimeLimitSeconds": "60",
+        "Text": "Please enter OTP",
+        "DTMFConfiguration": {
+          "DisableCancelKey": "False"
+        },
+        "InputValidation": {
+          "CustomValidation": {
+            "MaximumLength": "20"
+          }
+        }
+      },
+      "Identifier": "43eb4847-5019-48e3-87a7-55ddb2789aed",
+      "Type": "GetParticipantInput",
+      "Transitions": {
+        "NextAction": "a27fd4a5-f177-41b6-8555-f040782fca1f",
+        "Errors": [
+          {
+            "NextAction": "a27fd4a5-f177-41b6-8555-f040782fca1f",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "On the Managers Registered Number, you will recieve an OTP for Closing the Contact Centre."
+      },
+      "Identifier": "70328375-79c6-4886-992b-15fd64b4779e",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "send otp",
+        "Errors": [
+          {
+            "NextAction": "send otp",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "${lambda2_arn}",
+        "InvocationTimeLimitSeconds": "3",
+        "LambdaInvocationAttributes": {
+          "otp": "$.External.otp",
+          "PhoneNumber": "$.External.PhoneNumber"
+        },
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "send otp",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "43eb4847-5019-48e3-87a7-55ddb2789aed",
+        "Errors": [
+          {
+            "NextAction": "43eb4847-5019-48e3-87a7-55ddb2789aed",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "body": "$.External.body"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "0065286b-5ffc-4281-bf90-b2e26d90085e",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "32e7e220-66dd-4e74-a028-a247f9bc6d0a",
+        "Errors": [
+          {
+            "NextAction": "32e7e220-66dd-4e74-a028-a247f9bc6d0a",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.CustomerOTP"
+      },
+      "Identifier": "97ded0ac-2457-4ea6-a087-c7a382b496ee",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "4fd7c999-5d5e-4c2b-b6bf-24ba31cfccf1",
+        "Conditions": [
+          {
+            "NextAction": "Change state",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "$.Attributes.otp"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "4fd7c999-5d5e-4c2b-b6bf-24ba31cfccf1",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "${lambda3_arn}",
+        "InvocationTimeLimitSeconds": "3",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "Change state",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "0065286b-5ffc-4281-bf90-b2e26d90085e",
+        "Errors": [
+          {
+            "NextAction": "0065286b-5ffc-4281-bf90-b2e26d90085e",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "StoreInput": "True",
+        "InputTimeLimitSeconds": "60",
+        "Text": "Please enter OTP",
+        "DTMFConfiguration": {
+          "DisableCancelKey": "False"
+        },
+        "InputValidation": {
+          "CustomValidation": {
+            "MaximumLength": "20"
+          }
+        }
+      },
+      "Identifier": "3192a1dd-47d5-4dba-a189-ecd1c3b49465",
+      "Type": "GetParticipantInput",
+      "Transitions": {
+        "NextAction": "9baf67c3-5130-4603-be09-c0620dc843f4",
+        "Errors": [
+          {
+            "NextAction": "9baf67c3-5130-4603-be09-c0620dc843f4",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "On the Managers Registered Number, you will recieve an OTP for Opening the Contact Centre."
+      },
+      "Identifier": "7256c062-a532-46c9-9aa4-2a4cb020bcd7",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "send otp-copy-1",
+        "Errors": [
+          {
+            "NextAction": "send otp-copy-1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "${lambda2_arn}",
+        "InvocationTimeLimitSeconds": "3",
+        "LambdaInvocationAttributes": {
+          "otp": "$.External.otp",
+          "PhoneNumber": "$.External.PhoneNumber"
+        },
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "send otp-copy-1",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "3192a1dd-47d5-4dba-a189-ecd1c3b49465",
+        "Errors": [
+          {
+            "NextAction": "3192a1dd-47d5-4dba-a189-ecd1c3b49465",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "body": "$.External.body"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "ef9e1e69-fc73-463f-9766-1c9e7ce89ded",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "3cb1e496-9b25-4971-86db-311cb7e5234d",
+        "Errors": [
+          {
+            "NextAction": "3cb1e496-9b25-4971-86db-311cb7e5234d",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.CustomerOTP"
+      },
+      "Identifier": "dbae1e7b-2cf4-4041-864a-4f67e61b999f",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "Change state-copy-1",
+        "Conditions": [
+          {
+            "NextAction": "Change state-copy-1",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "$.Attributes.otp"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "Change state-copy-1",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "${lambda3_arn}",
+        "InvocationTimeLimitSeconds": "3",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "Change state-copy-1",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "ef9e1e69-fc73-463f-9766-1c9e7ce89ded",
+        "Errors": [
+          {
+            "NextAction": "ef9e1e69-fc73-463f-9766-1c9e7ce89ded",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.body"
+      },
+      "Identifier": "32e7e220-66dd-4e74-a028-a247f9bc6d0a",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "4bc8f7ed-011c-4312-9390-aff209d22265",
+        "Conditions": [
+          {
+            "NextAction": "4bc8f7ed-011c-4312-9390-aff209d22265",
+            "Condition": {
+              "Operator": "TextContains",
+              "Operands": [
+                "Closed"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "4bc8f7ed-011c-4312-9390-aff209d22265",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "4fd7c999-5d5e-4c2b-b6bf-24ba31cfccf1",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Text": "The Contact Center is now closed."
+      },
+      "Identifier": "4bc8f7ed-011c-4312-9390-aff209d22265",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "4fd7c999-5d5e-4c2b-b6bf-24ba31cfccf1",
+        "Errors": [
+          {
+            "NextAction": "4fd7c999-5d5e-4c2b-b6bf-24ba31cfccf1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "9c3aa70b-ad45-4576-956d-a709829a1d85",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "StoreInput": "False",
+        "InputTimeLimitSeconds": "60",
+        "Text": "Would you like to do an emergency closure on the Contact Centre? If so Press 1, If not Press 2."
+      },
+      "Identifier": "1405c8a0-2239-4333-8ba6-7acd3d322483",
+      "Type": "GetParticipantInput",
+      "Transitions": {
+        "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+        "Conditions": [
+          {
+            "NextAction": "70328375-79c6-4886-992b-15fd64b4779e",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "1"
+              ]
+            }
+          },
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "2"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "ErrorType": "InputTimeLimitExceeded"
+          },
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.state"
+      },
+      "Identifier": "d27bfd02-9c0c-40d0-b354-9c73a5af8356",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+        "Conditions": [
+          {
+            "NextAction": "d9348e3b-0d3a-47b0-8e70-6fe8b32f8922",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Closed"
+              ]
+            }
+          },
+          {
+            "NextAction": "1405c8a0-2239-4333-8ba6-7acd3d322483",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "Open"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "StoreInput": "False",
+        "InputTimeLimitSeconds": "5",
+        "Text": "Would you like to re-open the contact center, if so please press 1."
+      },
+      "Identifier": "d9348e3b-0d3a-47b0-8e70-6fe8b32f8922",
+      "Type": "GetParticipantInput",
+      "Transitions": {
+        "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+        "Conditions": [
+          {
+            "NextAction": "7256c062-a532-46c9-9aa4-2a4cb020bcd7",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "1"
+              ]
+            }
+          },
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "2"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "ErrorType": "InputTimeLimitExceeded"
+          },
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "e0f51e06-bf60-4863-87e7-433f43922a70",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "sorry you made invalid input."
+      },
+      "Identifier": "e0f51e06-bf60-4863-87e7-433f43922a70",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "9c3aa70b-ad45-4576-956d-a709829a1d85",
+        "Errors": [
+          {
+            "NextAction": "9c3aa70b-ad45-4576-956d-a709829a1d85",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}
