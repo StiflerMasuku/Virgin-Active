@@ -383,7 +383,6 @@ resource "aws_connect_contact_flow" "Virgin-Active-Main-Contact-Flow" {
   name         = "Virgin-Active-Main-Contact-Flow"
   description  = "Virgin Active Main Contact Flow"
   type         = "CONTACT_FLOW"
-  filename     = "Virgin-Active-Main-Line-Flow.json"
   content = templatefile("./Virgin-Active-Main-Line-Flow.json", {
     queue_arn = aws_connect_queue.Virgin-Active-Agent-Queue.arn
     hours_arn = aws_connect_hours_of_operation.Virgin-Active-Hours_of_Operation.arn
