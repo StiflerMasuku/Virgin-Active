@@ -456,7 +456,7 @@ resource "aws_lambda_function" "DynamoContactCenterChangeState" {
 
 
 
-resource "aws_connect_contact_flow" "Virgin-Active-Main-Contact-Flow" {
+resource "aws_connect_contact_flow" "Virgin-Active-Contact-Centre-Closure-Flow" {
   instance_id  = "70fb22ed-9bcf-47c7-b442-6c2307be4e2c"
   name         = "Virgin-Active-Contact-Centre-Closure-Flow"
   description  = "Virgin Active Contact Centre Closure Contact Flow"
